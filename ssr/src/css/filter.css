@@ -1,0 +1,14 @@
+h6 {
+  border-bottom: 1px solid black;
+}
+.filterBtn {
+  background-color: rgb(157, 216, 117);
+  margin: 1vh 1vw 1vh 1vw;
+}
+.filterBtn:hover .filterBtn:focus,
+.filterBtn:active {
+  background-color: rgb(121, 201, 67);
+}
+.active {
+  background-color: rgb(82, 145, 39);
+}
