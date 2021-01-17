@@ -49,7 +49,9 @@ function DisplayLaunches(props) {
                   </p>
                   <p className="p-textHeading">
                     Successful Launch:{" "}
-                    <span className="span-text">{flight.launch_success}</span>
+                    <span className="span-text">
+                      {flight.launch_success.toString()}
+                    </span>
                   </p>
                   <p className="p-textHeading">
                     Successful Landing:{" "}

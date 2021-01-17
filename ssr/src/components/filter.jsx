@@ -23,10 +23,15 @@ function Filter() {
     2019,
     2020,
   ]);
-  const [userSelectedVal, setUserSelectedVal] = useState([]);
+  const [boolBtnValue, setBoolBtnValue] = useState(["True", "False"]);
+  const [successLaunchStatusHeading, setSuccessLaunchStatusHeading] = useState([
+    "Successful Launch",
+    "Successful Landing",
+  ]);
+  const [userSelectedVal, setUserSelectedVal] = useState({});
   const [successfulLaunchType, setSuccessfulLaunchType] = useState(true);
   const [successfulLandingType, setSuccessfulLandingType] = useState(true);
-  const [activeYear, setActiveYear] = useState(null);
+  const [activeYear, setActiveYear] = useState(8);
   const [launchActive, setLaunchActive] = useState(null);
   const [landingActive, setLandingActive] = useState(null);
 
@@ -45,18 +50,18 @@ function Filter() {
   };
 
   // onClick of successful launch type
-  const onSelectSuccessfulLaunchType = (type) => {
+  const onSelectSuccessfulLaunchType = (type, index) => {
     setSuccessfulLaunchType(type);
-    setLaunchActive(type);
+    setLaunchActive(index);
     axios.get(apiConstants.successfulLaunches + type).then((res) => {
       setUserSelectedVal(res.data);
     });
   };
 
   // onClick of successful landing type
-  const onSelectSuccessfulLandingType = (type) => {
+  const onSelectSuccessfulLandingType = (type, index) => {
     setSuccessfulLandingType(type);
-    setLandingActive(type);
+    setLaunchActive(index);
     axios
       .get(
         `${
@@ -66,6 +71,12 @@ function Filter() {
       .then((res) => {
         setUserSelectedVal(res.data);
       });
+  };
+  const onSuccessStatusClick = (heading, type, index) => {
+    console.log("heading", heading, type, index);
+    heading === "Successful Launch"
+      ? onSelectSuccessfulLaunchType(type, heading + index)
+      : onSelectSuccessfulLandingType(type, heading + index);
   };
 
   return (
@@ -94,56 +105,36 @@ function Filter() {
                 })}
               </div>
 
-              <h6>Successful Launch</h6>
-              <div className="row">
-                <div className="col-sm-6 col-md-6">
-                  <button
-                    type="button"
-                    className={`btn filterBtn ${
-                      launchActive === true && "active"
-                    }`}
-                    onClick={() => onSelectSuccessfulLaunchType(true)}
-                  >
-                    True
-                  </button>
-                </div>
-                <div className="col-sm-6 col-md-6">
-                  <button
-                    type="button"
-                    className={`btn filterBtn ${
-                      launchActive === false && "active"
-                    }`}
-                    onClick={() => onSelectSuccessfulLaunchType(false)}
-                  >
-                    False
-                  </button>
-                </div>
-              </div>
-              <h6>Successful Landing</h6>
-              <div className="row">
-                <div className="col-sm-6 col-md-6">
-                  <button
-                    type="button"
-                    className={`btn filterBtn ${
-                      landingActive === true && "active"
-                    }`}
-                    onClick={() => onSelectSuccessfulLandingType(true)}
-                  >
-                    True
-                  </button>
-                </div>
-                <div className="col-sm-6 col-md-6">
-                  <button
-                    type="button"
-                    className={`btn filterBtn ${
-                      landingActive === false && "active"
-                    }`}
-                    onClick={() => onSelectSuccessfulLandingType(false)}
-                  >
-                    False
-                  </button>
-                </div>
-              </div>
+              {successLaunchStatusHeading.map((heading, headingIndex) => {
+                return (
+                  <div key={headingIndex}>
+                    <h6>{heading}</h6>
+                    <div className="row">
+                      {boolBtnValue.map((boolVal, index) => {
+                        return (
+                          <div className="col-sm-6 col-md-6" key={index}>
+                            <button
+                              type="button"
+                              className={`btn filterBtn ${
+                                launchActive === heading + index && "active"
+                              }`}
+                              onClick={() =>
+                                onSuccessStatusClick(
+                                  heading,
+                                  boolVal.toLowerCase(),
+                                  index
+                                )
+                              }
+                            >
+                              {boolVal}
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
