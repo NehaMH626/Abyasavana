@@ -54,10 +54,7 @@ function DisplayLaunches(props) {
                     </span>
                   </p>
                   <p className="p-textHeading">
-                    Successful Landing:{" "}
-                    <span className="span-text">
-                      {flight["launch_success"]}
-                    </span>
+                    Successful Landing: <span className="span-text">N/A</span>
                   </p>
                 </div>
               </div>
@@ -65,7 +62,7 @@ function DisplayLaunches(props) {
           );
         })
       ) : (
-        <div>
+        <div className="marginAuto">
           <h5>{loading === true ? "Loading" : "No Data To Display"}</h5>
         </div>
       )}
