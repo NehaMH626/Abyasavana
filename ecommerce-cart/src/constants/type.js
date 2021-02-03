@@ -1,3 +1,5 @@
 export const GET_ERROR = "GET_ERROR";
-export const ALL_COUSTUME = "ALL_COUSTUME"
-export const UPDATE_FILTER = "UPDATE_FILTER"
+export const ALL_COUSTUME = "ALL_COUSTUME";
+export const UPDATE_FILTER = "UPDATE_FILTER";
+export const UPDATE_CART = "UPDATE_CART";
+export const UPDATE_CART_ITEMS_SIZES = " UPDATE_CART_ITEMS_SIZES";

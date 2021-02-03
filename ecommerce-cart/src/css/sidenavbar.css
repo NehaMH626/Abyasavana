@@ -1,0 +1,254 @@
+.sidenav {
+  height: 100%;
+  /* overflow: scroll; */
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+}
+.sidenavOpen {
+  width: 250px;
+}
+.sidenavClose {
+  width: 0;
+}
+.cartIcon {
+  margin: auto;
+  text-align: center;
+  padding-bottom: 20px;
+  color: white;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  /* right: 25px;
+  font-size: 36px;
+  margin-left: 50px; */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.cartImg {
+  width: 60px;
+  padding: 7px;
+}
+.cartFontSize {
+  font-size: 0.8rem;
+}
+.cartTitleColor {
+  color: white;
+}
+.cartPrizeColor {
+  color: rgb(230, 188, 3);
+}
+/* .cartTitleColor > p {
+  text-align: left;
+  margin-bottom: 0.3rem;
+} */
+.textAlign-Right {
+  text-align: right;
+  padding-right: 12px;
+  font-size: 1.4rem;
+}
+.textColor-grey {
+  color: #717171;
+}
+.verticalAlign {
+  top: 20%;
+  position: absolute;
+}
+
+.cartContainer {
+  position: relative;
+}
+
+.textAlign-Left {
+  text-align: left;
+}
+.marginBottom-0 {
+  margin-bottom: 0;
+}
+.deleteCartItem-btn {
+  background: #25252500;
+  padding: 0;
+  border: none;
+  margin-left: 90%;
+}
+.deleteCartItem-btn:active,
+.deleteCartItem-btn:focus {
+  color: rgb(230, 230, 230);
+  border: none;
+  outline: none;
+}
+.cartRowContainer {
+  background: #252525;
+  margin-top: 3px;
+}
+.cartRowHover {
+  background: #171717;
+}
+.cartRowHoverFalse {
+  background: #252525;
+}
+.cartItemDeleteIcon {
+  color: black;
+}
+.cartItemDeleteIcon:hover {
+  color: rgb(230, 230, 230);
+}
+.cartBtn {
+  background-color: black;
+  color: white;
+}
+.lineThrough {
+  text-decoration: line-through;
+}
+.top45 {
+  top: 45%;
+}
+.productPrice-p {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.i-font {
+  font-size: 1.9em;
+}
+.i-size {
+  font-size: 2.4em;
+}
+.i {
+  /* font-size: 1.5em; */
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+}
+
+.notificationBadge:after {
+  content: attr(data-count);
+  position: absolute;
+  background: rgb(230, 188, 3);
+  height: 1rem;
+  top: 1.7rem;
+  right: 0.025rem;
+  width: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.5rem;
+  border-radius: 50%;
+  color: black;
+  border: 1px solid rgb(230, 188, 3);
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.cartTotalContainer {
+  font-size: 0.85rem;
+  font-weight: 400;
+  background: #1c1c1c;
+  margin: 7px 0;
+  box-shadow: 0 3px 6px rgb(48 48 48 / 51%), 0 3px 6px rgb(8 8 8 / 43%);
+  z-index: 1;
+}
+.top-35 {
+  top: 35%;
+}
+.fontEMI {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: right;
+  padding-right: 12px;
+}
+.font-1rem {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.checkoutBtn {
+  width: 300px;
+  /* margin: auto; */
+  color: #d5d5d5;
+  background: black;
+  /* margin: 10px; */
+  left: 50%;
+}
+.marginAuto {
+  margin: auto;
+}
+.costumeContainer {
+  height: 400px;
+  overflow-x: hidden;
+}
+.marginBottomCheckoutBtn {
+  margin-bottom: 15px;
+}
+
+.margin0 {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.quantityBtn {
+  background: #0c0c0c;
+  color: #bdbdbd;
+  border: none;
+  margin: 1px;
+}
+.disabled {
+  background: #1d1d1d;
+}
+.active {
+  background: #0c0c0c;
+}
+.cartBtn:hover {
+  color: #f0f0f0;
+}
+/* custom scrollBar */
+/* width */
+.style-scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: #242424;
+}
+
+.style-scroll::-webkit-scrollbar {
+  width: 10px;
+  background-color: #242424;
+}
+
+.style-scroll::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+.scrollbar {
+  margin-left: 22px;
+  float: left;
+  height: 300px;
+  width: 65px;
+  background: #242424;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+}
+
+.force-overflow {
+  min-height: 450px;
+}

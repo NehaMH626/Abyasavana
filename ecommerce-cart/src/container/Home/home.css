@@ -1,3 +1,11 @@
+/* Home Component */
+.container-marginTop {
+  margin-top: 3vh;
+}
+.textAlign-left {
+  text-align: left;
+}
+
 /* Filter Component */
 .sizeBtn {
   margin: 3px;
@@ -14,20 +22,14 @@
   margin-bottom: 0;
 }
 .fontSize-p {
-  font-size: 11px;
+  font-size: 0.9rem;
   color: #7a7a7a;
+  font-weight: 500;
 }
 p {
   text-align: center;
 }
-.borderBottom {
-  border-bottom: 2px solid rgb(255, 230, 0);
-  width: 25px;
-  margin: auto;
-}
-.fontSize-span {
-  font-size: 16px;
-}
+
 .textColor-Black {
   color: black;
 }
@@ -50,6 +52,85 @@ p {
   background-color: #cac8c8;
   color: black;
 }
+/* costume component */
+.costume-img {
+  width: 150px;
+  margin: auto;
+}
+.textColor-grey {
+  color: #595959;
+}
+.textColor-lightGrey {
+  color: #c0c0c0;
+}
+.fontSize-span {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.card-title {
+  font-size: 0.9rem;
+  padding-top: 5px;
+  font-weight: 500;
+  color: #595959;
+  height: 50px;
+}
+.addBtn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.addBtn:hover {
+  background-color: rgb(230, 188, 3);
+}
+.borderBottom {
+  border-bottom: 2px solid rgb(255, 208, 0);
+  width: 25px;
+  margin: auto;
+}
+.margin-p {
+  margin-bottom: 0;
+  margin-top: 0.9rem;
+}
+.card-container {
+  max-height: 25vh;
+}
+.shipping-label {
+  font-size: 0.7rem;
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 8vw;
+  padding: 2px;
+  margin-left: auto;
+  margin-right: 0;
+}
+.empty-div {
+  height: 10px;
+}
+.float-right {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.select {
+  color: #595959;
+  word-wrap: normal;
+  font-size: 1rem;
+  margin-left: 2vw;
+  font-weight: 500;
+  height: 35px;
+}
+
+/* ------Cart Component */
+
+*.icon-grey {
+  color: grey;
+}
+
 /*  Loader Component */
 div._loading_overlay_wrapper {
   height: 100%;

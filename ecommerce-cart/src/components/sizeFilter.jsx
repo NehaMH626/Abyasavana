@@ -4,11 +4,9 @@ import { Button } from "react-bootstrap";
 import { updateFilter } from "../container/Home/action";
 
 function SizeFilter(props) {
-  console.log(props.getUpdateFilter, "propsNehuuuuuu");
   const [sizeList, setSizeList] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [sizeCheckList, setSizeCheckList] = useState([]);
-  //let sizeCheckList = [];
 
   useEffect(() => {
     let newSizeList = [];
@@ -33,29 +31,29 @@ function SizeFilter(props) {
     setSizeCheckList(sizeArr);
   }, [sizeList]);
 
+  //Select Sizes
   const handleCheckList = (size, index) => {
-    sizeCheckList[index]["checked"] = !sizeCheckList[index]["checked"];
-    var selectedSizesVar = selectedSizes;
-    if (sizeCheckList[index]["checked"] === true) {
-      if (!selectedSizes.includes(size)) {
-        selectedSizesVar.push(size);
+    var copy_sizeCheckList = [...sizeCheckList];
+    copy_sizeCheckList[index]["checked"] = !copy_sizeCheckList[index][
+      "checked"
+    ];
+    var copy_selectedSizes = [...selectedSizes];
+    if (copy_sizeCheckList[index]["checked"] === true) {
+      if (!copy_selectedSizes.includes(size)) {
+        copy_selectedSizes.push(size);
       }
-    } else if (sizeCheckList[index]["checked"] === false) {
-      if (selectedSizes.indexOf(size) !== -1) {
-        selectedSizesVar.splice(selectedSizes.indexOf(size), 1);
+    } else if (copy_sizeCheckList[index]["checked"] === false) {
+      if (copy_selectedSizes.indexOf(size) !== -1) {
+        copy_selectedSizes.splice(copy_selectedSizes.indexOf(size), 1);
       }
     }
-    setSelectedSizes(selectedSizes);
-    props.updateFilter(selectedSizesVar);
-
-    console.log("selectedSizes", selectedSizes, selectedSizesVar);
-
-    console.log("checkList", sizeCheckList);
+    setSelectedSizes(copy_selectedSizes);
+    setSizeCheckList(copy_sizeCheckList);
+    props.updateFilter(copy_selectedSizes);
   };
 
   return (
     <div className="row">
-      {selectedSizes}
       {sizeList.map((size, index) => (
         <button
           key={index}

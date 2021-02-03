@@ -1,21 +1,23 @@
 import Costumes from "../../components/costumes";
 import SizeFilter from "../../components/sizeFilter";
+import Cart from "../../components/cart";
 import "../Home/home.css";
 import { connect } from "react-redux";
 
 function Home(props) {
-  console.log(props.getUpdateFilter, "propsNehuuuuuu");
   return (
     <div>
-      <div className="container">
+      <div className="container container-marginTop">
         <div className="row">
-          <div className="col-md-3 col-sm-3">
+          <div className="col-md-2 col-sm-2">
             <h6>Sizes</h6>
             <SizeFilter />
           </div>
           <div className="col-md-9 col-sm-9">
-            <h1>Costumes</h1>
             <Costumes />
+          </div>
+          <div className="col-md-1 col-sm-1">
+            <Cart />
           </div>
         </div>
       </div>

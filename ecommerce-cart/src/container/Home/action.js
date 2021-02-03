@@ -1,4 +1,10 @@
-import { GET_ERROR, ALL_COUSTUME, UPDATE_FILTER } from "../../constants/type";
+import {
+  GET_ERROR,
+  ALL_COUSTUME,
+  UPDATE_FILTER,
+  UPDATE_CART,
+  UPDATE_CART_ITEMS_SIZES,
+} from "../../constants/type";
 import axios from "axios";
 import { constumeAPI } from "../../constants/util";
 
@@ -7,7 +13,6 @@ export const getConstume = () => (dispatch) => {
     .get(constumeAPI)
     .then((res) => {
       if (res.status) {
-        console.log("res", res);
         dispatch({
           type: ALL_COUSTUME,
           payload: res.data,
@@ -25,4 +30,14 @@ export const getConstume = () => (dispatch) => {
 export const updateFilter = (selectedSizes) => ({
   type: UPDATE_FILTER,
   payload: selectedSizes,
+});
+
+export const updateCart = (cartItems) => ({
+  type: UPDATE_CART,
+  payload: cartItems,
+});
+
+export const updateCartItemsSizes = (cartItemsSizes) => ({
+  type: UPDATE_CART_ITEMS_SIZES,
+  payload: cartItemsSizes,
 });
